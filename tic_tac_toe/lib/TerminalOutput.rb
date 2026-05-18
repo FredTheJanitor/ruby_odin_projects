@@ -28,5 +28,11 @@ class TerminalOutput
     puts "-------------------------------"
   end
 
+  def play_again
+    puts "_______________________________"
+    puts "Would you like to play again?"
+    puts "-------------------------------"
+  end
+
 
 end
