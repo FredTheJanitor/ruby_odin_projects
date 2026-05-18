@@ -1,4 +1,5 @@
 class GameCondition
+  attr_accessor :turn
   def initialize
     @turn = "x"
     @game_over = false
@@ -6,11 +7,12 @@ class GameCondition
     @o_won = false
     @squares_remaining = 9
     @pickable_numbers = [*1..9]
+    @turn_number = 1
   end
 
   def player_turn
     @squares_remaining -= 1
-    
+    @turn_number += 1
     player_choice = loop do
       typed_input = gets.chomp.to_i
       break typed_input if @pickable_numbers.include? typed_input

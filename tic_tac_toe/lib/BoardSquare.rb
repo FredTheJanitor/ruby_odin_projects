@@ -1,5 +1,9 @@
 class BoardSquare
+  attr_accessor :player, :space_number
+  @@x_list = []
+  @@o_list = []
   @@picked_boardsquares = []
+  @@number_of_plays = 0
   def self.check_for_wins
     if @@picked_boardsquares.include? 4
       four_win_condition1 = [1,4,7]
@@ -30,11 +34,28 @@ class BoardSquare
   def initialize(player, space_number)
     @player = player
     @space_number = space_number
+    @@number_of_plays += 1
+    @move_number = @@number_of_plays
     @@picked_boardsquares.push(space_number)
+    if player = "x"
+      @@x_list.push(space_number)
+    else
+      @@o_list.push(space_number)
+    end
+
   end
 
   def clear_board
     @@picked_boardsquares = []
+  end
+
+  def check_who_won(space)
+    if @@x_list.include? space
+      return "Player X"
+    end
+    if @@o_list.include? space
+      return "Player O"
+    end
   end
 
 end
