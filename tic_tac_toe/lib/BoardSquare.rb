@@ -5,6 +5,7 @@ class BoardSquare
   @@picked_boardsquares = []
   @@number_of_plays = 0
   def self.check_for_wins
+    # Need to check xlist and olist for wins, not all boardsquares.
     if @@picked_boardsquares.include? 4
       four_win_condition1 = [1,4,7]
       four_win_condition2 = [4,5,6]
