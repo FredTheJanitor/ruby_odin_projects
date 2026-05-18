@@ -7,8 +7,9 @@ class GameCondition
     @squares_remaining = 9
     @pickable_numbers = [*1..9]
   end
-  def take_turn
-    @squares_left -= 1
+
+  def player_turn
+    @squares_remaining -= 1
     
     player_choice = loop do
       typed_input = gets.chomp.to_i
@@ -18,7 +19,8 @@ class GameCondition
 
     @pickable_numbers.delete(player_choice)
   end
-  def change_turn
+
+  def next_player
     if @turn == "x"
       @turn = "o"
     else 

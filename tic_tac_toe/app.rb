@@ -5,3 +5,5 @@ require_relative 'lib/TerminalOutput'
 board = TerminalOutput.new
 board.print_board
 board.request_input
+game = GameCondition.new
+game.player_turn
