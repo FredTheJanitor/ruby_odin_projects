@@ -1,7 +1,8 @@
 class GameCondition
   attr_accessor :turn
+
   def initialize
-    @turn = "x"
+    @turn = 'x'
     @game_over = false
     @x_won = false
     @o_won = false
@@ -16,17 +17,18 @@ class GameCondition
     player_choice = loop do
       typed_input = gets.chomp.to_i
       break typed_input if @pickable_numbers.include? typed_input
-      puts "Invalid Choice: please pick one of the open squares"
+
+      puts 'Invalid Choice: please pick one of the open squares'
     end
 
     @pickable_numbers.delete(player_choice)
   end
 
   def next_player
-    if @turn == "x"
-      @turn = "o"
-    else 
-      @turn = "x"
-    end
+    @turn = if @turn == 'x'
+              'o'
+            else
+              'x'
+            end
   end
 end

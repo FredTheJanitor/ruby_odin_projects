@@ -1,5 +1,6 @@
 class TerminalOutput
   attr_accessor :one, :two, :three, :four, :five, :six, :seven, :eight, :nine
+
   def initialize
     @one = 1
     @two = 2
@@ -10,32 +11,33 @@ class TerminalOutput
     @seven = 7
     @eight = 8
     @nine = 9
-    @winner = "Nobody"
+    @winner = 'Nobody'
   end
+
   def print_board
-    puts "_______________________________"
-    puts "GAME BOARD:"
-    puts "-------------------------------"
+    puts '_______________________________'
+    puts 'GAME BOARD:'
+    puts '-------------------------------'
     puts "\e[4m#{@one}|#{@two}|#{@three}\n#{@four}|#{@five}|#{@six}\e[0m\n#{@seven}|#{@eight}|#{@nine}"
   end
-  
+
   def request_input
-    puts "_______________________________"
-    puts "Pick a Number to Place a Marker"
-    puts "-------------------------------"
+    puts '_______________________________'
+    puts 'Pick a Number to Place a Marker'
+    puts '-------------------------------'
   end
 
   def game_over(winner = "#{@winner}")
-    puts "_______________________________"
+    puts '_______________________________'
     puts "GAME OVER! #{winner} wins!"
-    puts "-------------------------------"
+    puts '-------------------------------'
     exit
   end
 
   def play_again
-    puts "_______________________________"
-    puts "Would you like to play again?"
-    puts "-------------------------------"
+    puts '_______________________________'
+    puts 'Would you like to play again?'
+    puts '-------------------------------'
   end
 
   def change_board(player, space)
@@ -60,6 +62,4 @@ class TerminalOutput
       @nine = player
     end
   end
-
-
 end
