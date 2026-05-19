@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This class handles output into the terminal
 class TerminalOutput
   attr_accessor :one, :two, :three, :four, :five, :six, :seven, :eight, :nine
 

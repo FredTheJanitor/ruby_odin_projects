@@ -60,7 +60,7 @@ class BoardSquare
     end
   end
 
-  def clear_board
+  def self.clear_board
     @@picked_boardsquares = []
   end
 

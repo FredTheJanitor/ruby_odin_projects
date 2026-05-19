@@ -1,20 +1,16 @@
 # frozen_string_literal: true
 
+# This class tracks player turns and user input
 class GameCondition
   attr_accessor :turn
 
   def initialize
     @turn = 'x'
-    @game_over = false
-    @x_won = false
-    @o_won = false
-    @squares_remaining = 9
     @pickable_numbers = [*1..9]
     @turn_number = 1
   end
 
   def player_turn
-    @squares_remaining -= 1
     @turn_number += 1
     player_choice = loop do
       typed_input = gets.chomp.to_i
