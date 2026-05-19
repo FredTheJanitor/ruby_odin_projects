@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This class tracks BoardSquare Placement and tracks Win Conditions
 class BoardSquare
   attr_accessor :player, :space_number
 
@@ -7,6 +8,7 @@ class BoardSquare
   @@o_list = []
   @@picked_boardsquares = []
   @@number_of_plays = 0
+
   def self.check_for_wins
     # Need to check xlist and olist for wins, not all boardsquares.
     if @@picked_boardsquares.include? 4
@@ -50,7 +52,6 @@ class BoardSquare
   def initialize(player, space_number)
     @player = player
     @space_number = space_number
-    @@number_of_plays += 1
     @move_number = @@number_of_plays
     @@picked_boardsquares.push(space_number)
     if player == 'x'
