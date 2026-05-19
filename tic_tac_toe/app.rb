@@ -1,6 +1,8 @@
-require_relative 'lib/BoardSquare'
-require_relative 'lib/GameCondition'
-require_relative 'lib/TerminalOutput'
+# frozen_string_literal: true
+
+require_relative 'lib/board_square'
+require_relative 'lib/game_condition'
+require_relative 'lib/terminal_output'
 
 board = TerminalOutput.new
 board.print_board
