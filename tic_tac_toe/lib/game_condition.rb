@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GameCondition
   attr_accessor :turn
 

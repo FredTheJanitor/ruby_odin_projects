@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TerminalOutput
   attr_accessor :one, :two, :three, :four, :five, :six, :seven, :eight, :nine
 

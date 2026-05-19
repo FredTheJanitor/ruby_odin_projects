@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BoardSquare
   attr_accessor :player, :space_number
 
