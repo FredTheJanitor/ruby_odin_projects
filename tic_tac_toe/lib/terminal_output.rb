@@ -29,7 +29,7 @@ class TerminalOutput
     puts '-------------------------------'
   end
 
-  def game_over(winner = "#{@winner}")
+  def game_over(winner = @winner.to_s)
     puts '_______________________________'
     puts "GAME OVER! #{winner} wins!"
     puts '-------------------------------'
