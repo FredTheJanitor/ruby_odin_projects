@@ -1,15 +1,14 @@
 class GamePlay
+
   def initialize
     @turn = 0
     @game_over = false
     @guess_row = []
   end
-  def codebreaker_turn(user_input)
-    4.times do 
-      @guess_row.push(user_input)
-    end
+  #this will take the UserInterface instance user_input method as an argument
+  def codebreaker_turn(guess_row)
       @turn += 1
-      @guess_row
+      @guess_row = guess_row
   end
   def game_over_turns?
     return false unless @turn >= 10
