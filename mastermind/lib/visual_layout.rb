@@ -3,9 +3,9 @@
 
 class VisualLayout
   def initialize
-    @board_top = "\e[4m|?|?|?|?|\n
-                    -----------[0m"
-    @board_rows = array.new(10)
+    @board_top = "\e[4m|?|?|?|?|\n-----------\e[0m"
+    @board_rows = Array.new(10)
+    #board_rows needs to recieve both a guess_row and hint_row
     @board_bottom = "\e[4m|*|*|*|*|-[HINT KEYS!]\e[0m"
     
   end
@@ -16,10 +16,8 @@ class VisualLayout
     # are at the top.
     @board_rows.reverse_each { |board_row|
     puts "\e| | | | |-[ ][ ][ ][ ]\n" unless board_row
-    if board_row
-      
-    end
-  }
+    puts board_row if board_row
+    }
   end
   def update_board(guess_history, guess_number, hint_keys)
     # guess history is an array of arrays
@@ -27,14 +25,33 @@ class VisualLayout
     # [1,2,3,4], # - turn one
     # [2,3,4,5], # - turn two
     # ... etc.
-    puts "\e| | | | |-[ ][ ][ ][ ]\n"
+    guess_row = guess_history[guess_number - 1]
+    round_hint_keys = hint_keys
+    @board_rows[guess_number-1] = 
+      "\e|#{guess_row[0]}|#{guess_row[1]}|#{guess_row[2]}|#{guess_row[3]}|-
+      [#{round_hint_keys[0]}][#{round_hint_keys[1]}][#{round_hint_keys[2]}]
+      [#{round_hint_keys[3]}]-Turn #{guess_number}\n"
 
   end
-  def show_code(game_over)
-    case game_over
-    when "W"
+  def print_board
+    puts @board_top
+    self.print_board_rows
+    puts @board_bottom
+  end
 
-    when "T"
+  def show_code(game_over, secret_code)
+    secret_code_top = "\e[4m|#{secret_code[0]}|#{secret_code[1]}|#{secret_code[2]}|#{secret_code[3]}|\n
+                      -----------[0m"
+    if game_over
+      @board_top = secret_code_top
+      case game_over
+      when "W"
+        puts "CODE-BREAKER WINS"
+      when "T"
+        puts "CODE-MAKER WINS"
+      end
+      self.print_board
+      exit
     end
   end
 end
