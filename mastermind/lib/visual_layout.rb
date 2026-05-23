@@ -3,21 +3,29 @@
 
 class VisualLayout
   def initialize
-    @board = puts "\e[4m|?|?|?|?|\n
-                        | | | | |-[ ][ ][ ][ ]\n
-                        | | | | |-[ ][ ][ ][ ]\n
-                        | | | | |-[ ][ ][ ][ ]\n
-                        | | | | |-[ ][ ][ ][ ]\n
-                        | | | | |-[ ][ ][ ][ ]\n
-                        | | | | |-[ ][ ][ ][ ]\n
-                        | | | | |-[ ][ ][ ][ ]\n
-                        | | | | |-[ ][ ][ ][ ]\n
-                        | | | | |-[ ][ ][ ][ ]\n
-                        | | | | |-[ ][ ][ ][ ]\n
-                        |*|*|*|*|-[HINT KEYS!]\n\e[0m"
-                        # I need a way to inject the 
-                        # guesses more seemlessly into 
-                        # the board
+    @board_top = "\e[4m|?|?|?|?|\n
+                    -----------[0m"
+    @board_rows = array.new(10)
+    @board_bottom = "\e[4m|*|*|*|*|-[HINT KEYS!]\e[0m"
     
+  end
+  def print_board_rows
+    @board_rows.reverse_each { |board_row|
+    puts "\e| | | | |-[ ][ ][ ][ ]\n" unless board_row
+    if board_row
+      
+    end
+  }
+  end
+  def update_board(guess_history, guess_number, hint_keys)
+    puts "\e| | | | |-[ ][ ][ ][ ]\n"
+
+  end
+  def show_code(game_over)
+    case game_over
+    when "W"
+
+    when "T"
+    end
   end
 end
