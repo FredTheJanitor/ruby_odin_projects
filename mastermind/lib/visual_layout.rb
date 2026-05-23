@@ -3,10 +3,10 @@
 
 class VisualLayout
   def initialize
-    @board_top = "\e[4m|?|?|?|?|\n-----------\e[0m"
+    @board_top = "\e[4m|?|?|?|?|\e[0m - Secret Code\n---------------------------------"
     @board_rows = Array.new(10)
     #board_rows needs to recieve both a guess_row and hint_row
-    @board_bottom = "\e[4m|*|*|*|*|-[HINT KEYS!]\e[0m"
+    @board_bottom = "\e[4m|*|*|*|*|-[HINT KEYS!]\e[0m\n---------------------------------"
     
   end
   def print_board_rows
