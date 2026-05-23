@@ -38,8 +38,7 @@ class VisualLayout
   end
 
   def show_code(game_over, secret_code)
-    secret_code_top = "\e[4m|#{secret_code[0]}|#{secret_code[1]}|#{secret_code[2]}|#{secret_code[3]}|\n
-                      -----------\e[0m"
+    secret_code_top = "\e[4m|#{secret_code[0]}|#{secret_code[1]}|#{secret_code[2]}|#{secret_code[3]}|\n-----------\e[0m"
     if game_over
       @board_top = secret_code_top
       case game_over
@@ -51,5 +50,24 @@ class VisualLayout
       self.print_board
       exit
     end
+  end
+  def introduction
+    puts "Welcome to MasterMind Console!"
+    puts '---------------------------------'
+    puts "\tHint Decoder:"
+    puts "! = direct hit"
+    puts 'x = hit in wrong space'
+    puts 'o = guess not present'
+    puts '---------------------------------'
+    puts "\tGuess Selection:"
+    puts 'Select a number 1-6 and hit enter'
+    puts 'Once you have 4 numbers selected,'
+    puts 'you will recieve your "Hint-Keys"'
+    puts '---------------------------------'
+    puts "\tInstructions:"
+    puts 'Guess the correct numbers in the'
+    puts 'secret code in the correct order'
+    puts 'before you run out of turns!'
+    puts '---------------------------------'
   end
 end

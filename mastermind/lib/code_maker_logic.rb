@@ -7,15 +7,15 @@ attr_reader :secret_code
   def check_guess_row(guess_row)
     @hint_keys = []
     guess_row.each_with_index { |guess, i|
-      if guess[i] == @secret_code[i]
-        @hint_keys.push(2)
+      if guess == @secret_code[i]
+        @hint_keys.push("!")
         next
       end
-      if @secret_code.any? == guess[i] 
-        @hint_keys.push(1)
+      if @secret_code.include?(guess) 
+        @hint_keys.push("x")
         next
       end
-      @hint_keys.push(0)
+      @hint_keys.push("o")
     }
     @hint_keys = @hint_keys.sort
   end
