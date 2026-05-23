@@ -18,9 +18,9 @@ class GamePlay
     return false unless secret_code == guess_code
     true
   end
-  def game_over?(game_over_turns, game_over_win)
+  def game_over(game_over_turns, game_over_win)
     return false unless game_over_turns || game_over_win
-    return "T" if game_over_turns
     return "W" if game_over_win
+    return "T" if game_over_turns
   end
 end

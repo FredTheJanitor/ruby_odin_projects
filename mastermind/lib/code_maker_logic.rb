@@ -1,4 +1,5 @@
 class CodeMakerLogic
+attr_reader :secret_code
   def initialize
     @secret_code = [rand(1..6),rand(1..6),rand(1..6),rand(1..6)]
     @hint_keys = []
