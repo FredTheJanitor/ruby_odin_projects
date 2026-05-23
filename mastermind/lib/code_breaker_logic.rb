@@ -16,6 +16,7 @@ class CodeBreakerLogic
     @@guess_number += 1
   end
   def guess_row(user_guess_row)
+    @guess_row = []
     @guess_row = user_guess_row
     @@guess_history.push(@guess_row)
   end

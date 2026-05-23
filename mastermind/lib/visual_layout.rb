@@ -15,7 +15,7 @@ class VisualLayout
     # then reverse iterating 10 times so blanks
     # are at the top.
     @board_rows.reverse_each { |board_row|
-    puts "\e| | | | |-[ ][ ][ ][ ]\n" unless board_row
+    puts "\e[4m| | | | |-[ ][ ][ ][ ]\e[0m" unless board_row
     puts board_row if board_row
     }
   end
@@ -28,9 +28,7 @@ class VisualLayout
     guess_row = guess_history[guess_number - 1]
     round_hint_keys = hint_keys
     @board_rows[guess_number-1] = 
-      "\e|#{guess_row[0]}|#{guess_row[1]}|#{guess_row[2]}|#{guess_row[3]}|-
-      [#{round_hint_keys[0]}][#{round_hint_keys[1]}][#{round_hint_keys[2]}]
-      [#{round_hint_keys[3]}]-Turn #{guess_number}\n"
+      "\e[4m|#{guess_row[0]}|#{guess_row[1]}|#{guess_row[2]}|#{guess_row[3]}|-[#{round_hint_keys[0]}][#{round_hint_keys[1]}][#{round_hint_keys[2]}][#{round_hint_keys[3]}]-Turn #{guess_number}\e[0m"
 
   end
   def print_board
@@ -41,7 +39,7 @@ class VisualLayout
 
   def show_code(game_over, secret_code)
     secret_code_top = "\e[4m|#{secret_code[0]}|#{secret_code[1]}|#{secret_code[2]}|#{secret_code[3]}|\n
-                      -----------[0m"
+                      -----------\e[0m"
     if game_over
       @board_top = secret_code_top
       case game_over
