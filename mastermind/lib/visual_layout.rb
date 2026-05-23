@@ -10,6 +10,10 @@ class VisualLayout
     
   end
   def print_board_rows
+    # board_rows starts as an array of 10 nil
+    # idea is pushing one guess row in at a time
+    # then reverse iterating 10 times so blanks
+    # are at the top.
     @board_rows.reverse_each { |board_row|
     puts "\e| | | | |-[ ][ ][ ][ ]\n" unless board_row
     if board_row
@@ -18,6 +22,11 @@ class VisualLayout
   }
   end
   def update_board(guess_history, guess_number, hint_keys)
+    # guess history is an array of arrays
+    # each subarray contains the guesses for a turn e.g.
+    # [1,2,3,4], # - turn one
+    # [2,3,4,5], # - turn two
+    # ... etc.
     puts "\e| | | | |-[ ][ ][ ][ ]\n"
 
   end
