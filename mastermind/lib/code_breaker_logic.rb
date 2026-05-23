@@ -19,6 +19,7 @@ class CodeBreakerLogic
     @guess_row = []
     @guess_row = user_guess_row
     @@guess_history.push(@guess_row)
+    @guess_row = []
   end
   def reset_codebreaker
     @@guess_history = []

@@ -17,6 +17,6 @@ attr_reader :secret_code
       end
       @hint_keys.push(0)
     }
-    @hint_keys
+    @hint_keys = @hint_keys.sort
   end
 end
