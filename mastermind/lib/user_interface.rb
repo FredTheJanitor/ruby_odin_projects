@@ -6,6 +6,7 @@ class UserInterface
   end
 
   def select_one_or_two
+    user_input = nil
     loop do 
       user_input = gets.chomp.to_i
       break if (1..2).include?(user_input)

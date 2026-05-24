@@ -10,7 +10,7 @@ class GamePlay
 
 def select_game_mode(controller_input)
   @game_mode = "H" if controller_input == 1
-  @game_mode = "C" if controller_input == 1
+  @game_mode = "C" if controller_input == 2
 end
 
   #this will take the UserInterface instance user_input method as an argument
