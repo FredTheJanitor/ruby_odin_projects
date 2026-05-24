@@ -31,8 +31,25 @@ end
 
 if game.game_mode == "C"
   board.computer_guess_mode
-  code_selection = controller.input_num_1_6
+  4.times do controller.input_num_1_6 end
+  code_selection = controller.guess_row
   code_maker.make_secret_code(game.game_mode, code_selection)
+  10.times do
+    puts "computer thinking..."
+    puts "\t(not really im literally just pausing the program)"
+    sleep 2 
+    board.print_board
+    code_breaker_turn = CodeBreakerLogic.new
+    controller.clear_guessrow
+    4.times do controller.cpu_input_num_1_6 end
+    guess_row = game.codebreaker_turn(controller.guess_row)
+    code_breaker_turn.guess_row(guess_row).flatten
+    hint_keys = code_maker.check_guess_row(guess_row)
+    board.update_board(CodeBreakerLogic.guess_history, CodeBreakerLogic.guess_number, hint_keys)
+    game_over_win = game.game_over_win?(code_maker.secret_code, guess_row)
+    game_over_turns = game.game_over_turns?
+    board.show_code(game.game_over(game_over_turns, game_over_win), code_maker.secret_code)
+  end
 end
 
 
