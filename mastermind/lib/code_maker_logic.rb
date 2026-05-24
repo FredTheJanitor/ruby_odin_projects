@@ -1,8 +1,15 @@
 class CodeMakerLogic
 attr_reader :secret_code
   def initialize
-    @secret_code = [rand(1..6),rand(1..6),rand(1..6),rand(1..6)]
     @hint_keys = []
+  end
+  def make_secret_code(game_mode, secret_code = [])
+    if game_mode == "H"
+      @secret_code = [rand(1..6),rand(1..6),rand(1..6),rand(1..6)]
+    end
+    if game_mode == "C"
+      @secret_code = secret_code
+    end
   end
   def check_guess_row(guess_row)
     @hint_keys = []

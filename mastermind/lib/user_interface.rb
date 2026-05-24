@@ -5,6 +5,15 @@ class UserInterface
     @guess_row = []
   end
 
+  def select_one_or_two
+    loop do 
+      user_input = gets.chomp.to_i
+      break if (1..2).include?(user_input)
+      puts 'Error: Please pick 1 or 2'
+    end
+    user_input
+  end
+
   def input_num_1_6
     user_input = 0
     loop do 

@@ -54,6 +54,18 @@ class VisualLayout
   def introduction
     puts "Welcome to MasterMind Console!"
     puts '---------------------------------'
+    puts 'Select 1 for Human-Guess Mode'
+    puts 'Se;ect 2 for Computer-Guess Mode'
+    puts '---------------------------------'
+  end
+  def human_guess_mode
+    puts "Welcome to Human-Guess Mode!"
+    puts '---------------------------------'
+    puts "\tInstructions:"
+    puts 'Guess the correct numbers in the'
+    puts 'secret code in the correct order'
+    puts 'before you run out of turns!'
+    puts '---------------------------------'
     puts "\tHint Decoder:"
     puts "! = direct hit"
     puts 'x = hit in wrong space'
@@ -64,17 +76,19 @@ class VisualLayout
     puts 'Once you have 4 numbers selected,'
     puts 'you will recieve your "Hint-Keys"'
     puts '---------------------------------'
-    puts "\tInstructions:"
-    puts 'Guess the correct numbers in the'
-    puts 'secret code in the correct order'
-    puts 'before you run out of turns!'
-    puts '---------------------------------'
+    
   end
   def computer_guess_mode
     puts "Welcome to Computer-Guess Mode!"
     puts '---------------------------------'
+    puts "\tInstructions:"
     puts "Select a secret code, and the"
     puts "computer will try to guess it!"
+    puts '---------------------------------'
+    puts "\tSecret Code Selection:"
+    puts 'Select a number 1-6 and hit enter'
+    puts 'Once you have 4 numbers selected,'
+    puts 'the computer will start to guess'
     puts '---------------------------------'
   end
 end
