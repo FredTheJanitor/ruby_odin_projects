@@ -70,4 +70,11 @@ class VisualLayout
     puts 'before you run out of turns!'
     puts '---------------------------------'
   end
+  def computer_guess_mode
+    puts "Welcome to Computer-Guess Mode!"
+    puts '---------------------------------'
+    puts "Select a secret code, and the"
+    puts "computer will try to guess it!"
+    puts '---------------------------------'
+  end
 end
