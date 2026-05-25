@@ -41,7 +41,7 @@ if game.game_mode == "C"
     board.print_board
     code_breaker_turn = CodeBreakerLogic.new
     controller.clear_guessrow
-    4.times do controller.cpu_input_num_1_6 end
+    controller.cpu_input(code_breaker_turn.cpu_thoughts)
     guess_row = game.codebreaker_turn(controller.guess_row)
     code_breaker_turn.guess_row(guess_row).flatten
     hint_keys = code_maker.check_guess_row(guess_row)

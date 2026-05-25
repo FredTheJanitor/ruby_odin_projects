@@ -25,9 +25,8 @@ class UserInterface
     @guess_row.push(user_input)
   end
 
-  def cpu_input_num_1_6
-    user_input = rand(1..6)
-    @guess_row.push(user_input)
+  def cpu_input(cpu_thoughts)
+    @guess_row = cpu_thoughts
   end
 
   def clear_guessrow
