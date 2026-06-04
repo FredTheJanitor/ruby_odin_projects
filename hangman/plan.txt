@@ -1,0 +1,63 @@
+1: need to use readline paired with rand
+    possibly to select a random word from a list
+
+    maybe there is a way to do it like an array?
+    yeah there is it was basically the
+    File.open('filename', 'mode') do |file|
+        file.readlines()[line number we want (0 index)]
+    or file = File.open etc... just remember file close
+
+    there are 9894 usable lines here, and remember the pointer
+
+2: we need to count guesses and incorrect guesses
+    this could be in some sort of scorekeeper class
+
+3: we need to display the word as blanks with the
+    correct guesses inserted and the guess numbers
+
+    this could be some sort of display class
+
+    maybe a cheeky message if they get it wrong too
+
+    message in intro talking about how to save
+
+4: we should have a user interface/ input class
+    where the user input and letter selection is
+    done and sanitized
+
+5: we need a save the game option at the start of every turn
+    I think the point of Odin is to 
+        1: use the resources in Odin to try to find this 
+            info first
+        2: if still stumped google it
+        3: dont use ai, this is about learning serializaiton
+            not just outputting a game
+
+
+
+    USER INPUT:
+    this could just be as simple as typing in save.
+    or we could have the user input be a menu call then
+    save as a menu option?
+
+    SERIALIZATION:
+    if a save is done, the program will have to log
+        1: what word was selected
+        2: number of guesses & incorrect guesses
+        3: the board state possibly? unless its just
+            super generative and i boss-mode that
+        4: maybe if the game is in the middle or not
+            this could allow a different intro text
+            to ask if theyd like to continue or start
+            a new game when returning
+        Maybe there should be a whole save_game or
+        game memory class for this?
+        Is there a way to just save the other class
+        files as is? or should my save file be a sort of 
+        code where it reads and then instructs the file
+        based on the code?
+
+        there should be a way to have multiple saved games
+        and be able to access them when program loads
+
+    
