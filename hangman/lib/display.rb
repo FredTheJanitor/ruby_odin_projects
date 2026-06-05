@@ -1,6 +1,8 @@
 class Display
 
-  # Here is the standard line break for convenience
+  # Here is the standard line break for 
+  #   convenience
+  #   
   # puts '---------------------------------'
 
   def intro_text
