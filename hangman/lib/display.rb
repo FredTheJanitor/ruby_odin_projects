@@ -22,4 +22,9 @@ class Display
     puts '---------------------------------'
   end
 
+  #get game_list from menu_selection to output and display
+  def game_selection(game_list)
+    # make game_list pretty in console
+  end
+
 end
