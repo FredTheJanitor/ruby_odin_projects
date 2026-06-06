@@ -6,6 +6,15 @@ class WordPicker
 
   def initialize
     words_array = File.readlines('english_words_9894.txt', chomp: true)
-    @selected_word = words_array[rand(1..9894)]
+    loop do 
+      word = words_array[rand(1..9894)]
+      if (5..12).cover? word.length
+        @selected_word = word
+        return
+      end 
+    end
   end
 end
+
+test_word = WordPicker.new
+puts test_word.selected_word
