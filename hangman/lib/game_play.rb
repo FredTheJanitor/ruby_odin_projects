@@ -1,8 +1,6 @@
-
-
 class GamePlay
 
-  # takes the output of random word picker
+  # takes the output of word picker's selected word
   def initialize(selected_word)
     @selected_word = selected_word
     @guess_number = 0

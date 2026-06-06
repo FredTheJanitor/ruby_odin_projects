@@ -1,4 +1,6 @@
 # I think we only call this when we load a save game
+# maybe the idea of serialization is that i dont have to do all
+# this and can just save the game_play class maybe?
 class Memory
   # when a new memory is created it should load the yaml translated output from menu_selection
   def initialize(menu_selection = [], selected_word = nil, guess_number = 0, guess_wrong = 0, board_blanks = [], board_hits = [])
