@@ -12,6 +12,12 @@ class Memory
     @board_hits = board_hits
   end
 
+  def start_game
+    if @menu_selection == 0
+      return 0
+    end
+  end
+
   # this method will gather the necessary info to reload the game
   # and return it in an array
   def capture_state#parameters will be whatever files these variables live in

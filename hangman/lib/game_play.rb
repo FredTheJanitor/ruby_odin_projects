@@ -13,7 +13,8 @@ class GamePlay
   # turns input into guess unless it has been guessed
   # already
   def check_input_guess(input)
-    guess = input unless guess_list.include? input
+    return guess = input unless @guess_list.include? input
+    return false    
   end
 
   # takes a proper guess and increases the guess number
@@ -35,7 +36,6 @@ class GamePlay
       @board_hits[index] = guess
     end
     @selected_word.delete guess
-    
   end
 
 end

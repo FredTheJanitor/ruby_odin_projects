@@ -16,5 +16,5 @@ class WordPicker
   end
 end
 
-test_word = WordPicker.new
-puts test_word.selected_word
+# test_word = WordPicker.new
+# puts test_word.selected_word

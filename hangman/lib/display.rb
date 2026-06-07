@@ -6,7 +6,7 @@ class Display
   # puts '---------------------------------'
 
   def intro_text
-    puts "Welcome to Hangman Terminal\n---------------------------------"
+    puts "\tWelcome to \n\tHangman Terminal\n---------------------------------"
   end
 
   def game_selection_text
@@ -16,9 +16,19 @@ class Display
   end
 
   def game_start_text(word)
+    puts '---------------------------------'
     puts "\tNew Game!"
-    puts '_ ' * word.length
+    puts '---------------------------------'
+    puts "\t" + '_ ' * word.length
+    puts '---------------------------------'
     puts "type a letter and we'll tell you\nif its in the word"
+    puts '---------------------------------'
+  end
+
+  def already_picked(guess)
+    puts '---------------------------------'
+    puts "you already picked the letter #{guess}"
+    puts "\t try a different letter!"
     puts '---------------------------------'
   end
 
