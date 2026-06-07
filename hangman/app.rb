@@ -14,7 +14,7 @@ screen.game_selection_text
 menu =  MenuSelection.new
 # menu.list_games
 game_pick = controller.menu_input
-# menu.pick_game
+# menu.pick_game(game_pick)
 if menu.new_game
   word_picker = WordPicker.new
   secret_word = word_picker.selected_word
